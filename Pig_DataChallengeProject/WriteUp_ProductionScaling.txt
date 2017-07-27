@@ -1,0 +1,25 @@
+------------------
+Apache Pig:
+------------------
+Apache Pig is a platform for analyzing large data sets that consists of a high-level language for expressing data analysis programs.
+Pig interprets Pig Latin code to create MapReduce jobs
+Pig is a procedural data flow language -pig latin.
+Grunt shell is used to write pig commands.
+Pig has 2 modes: Local mode and MapReduce mode
+Pig can be used to analyse any type of data.
+
+----------------
+Scaling in production: How to handle for millions of records?
+----------------
+This application can easily be scaled for huge data as Apache Pig runs on top of Apache Hadoop's map reduce framework.
+
+A hadoop framework application works in an environment that provides distributed storage and computation across clusters of computers.
+
+Hence, just by adding more number of data nodes in HDFS, this application would be ready to handle large amount of data. 
+
+Features of HDFS such as fault tolerence, scalability,minimal data motion can be leveraged.
+
+Note: I have tested these scripts in 'local' as well as 'mapreduce' mode provided by Apache Pig.
+I was able to use 1 node cluster due to limitation of Cloudera's Quick Start VM.
+In production we can have multiple nodes to handle much larger data.
+

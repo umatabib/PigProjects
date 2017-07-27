@@ -1,0 +1,85 @@
+﻿I used Cloudera quickstart VM which comes with basic pig installation. (Note: Pig version used is 0.12.0-cdh5.3.0)
+----------------
+Installing and running Cloudera quickstart VM:
+----------------
+1. Go to https://www.virtualbox.org/wiki/Downloads to download and install VirtualBox for your computer.
+2. Download the VirtualBox VM from https://downloads.cloudera.com/demo_vm/virtualbox/cloudera-quickstart-vm-5.4.2-0-virtualbox.zip .
+3. Unzip the VirtualBox VM:
+   Windows: Right-click cloudera-quickstart-vm-5.4.2-0-virtualbox.zip and select “Extract All…”
+4. Start VirtualBox
+5. Import the VM by going to File -> Import Appliance
+6. Select the cloudera-quickstart-vm-5.4.2-0-virtualbox.ovf from the Folder where you unzipped the VirtualBox VM.
+7. Click Import and wait for the VirtualBox VM to import.
+8. Select the cloudera-quickstart-vm-5.4.2-0 VM from the left nav and click the Start button.
+
+----------------
+If using cloudera quickstart VM, you can use following steps to run pig scripts in "mapreduce" mode:
+----------------
+1. Open terminal window.
+2. Create "lumoid" directory under /home/cloudera
+   $ mkdir lumoid
+   $ cd lumoid
+3. Download source.zip and input files "orders.csv" & "users.csv" under newly created "lumoid" directory.
+4. Extract files from "source.zip" directly under "lumoid" directory.
+5. Source files:
+   For each data challenge, there is a corresponding ".pig" file named based on data challenge index.
+   Input parameters for these scripts are present corresponding param*.txt file. Inputs can be changed by changing the parameter values in this file. 
+6. Setup HDFS enviornment:
+   i. Create diectory for input files under HDFS that will be used by pig scripts while running in "mapreduce" mode.
+      $ hadoop fs -mkdir lumoid1
+   ii. Copy input files from local file system directory to this newly created HDFS directory.
+       $ hadoop fs -put orders.csv lumoid1
+       $ hadoop fs -ls lumoid1
+       $ hadoop fs -put users.csv lumoid1
+       $ hadoop fs -ls lumoid1
+7. Run Data Challenge 1 in pig "mapreduce" mode:
+   $ pig -param_file param1.txt -f lumoid_1.pig
+   After completion output can be viewed by using follwoing command:
+   $ hadoop fs -cat lumoid1/output/part-r-00000
+8. Run Data Challenge 2a in pig "mapreduce" mode:
+   $ pig -param_file param2.txt -f lumoid_2a.pig
+   After completion output can be viewed by using follwoing command:
+   $ hadoop fs -cat lumoid1/output2a/part-r-00000
+9. Run Data Challenge 2b in pig "mapreduce" mode:
+   $ pig -param_file param2.txt -f lumoid_2b.pig
+   After completion output can be viewed by using follwoing command:
+   $ hadoop fs -cat lumoid1/output2b/part-m-00000
+10. Run Data Challenge 3a in pig "mapreduce" mode:
+    $ pig -param_file param3.txt -f lumoid_3a.pig
+    After completion output can be viewed by using follwoing command:
+    $ hadoop fs -cat lumoid1/output3a/part-r-00000
+11. Run Data Challenge 3b in pig "mapreduce" mode:
+    $ pig -param_file param3.txt -f lumoid_3b.pig
+    After completion output can be viewed by using follwoing command:
+    $ hadoop fs -cat lumoid1/output3b/part-r-00000
+
+----------------
+If using cloudera quickstart VM, you can use following steps to run pig scripts in "local" mode:
+----------------
+1. Each challenge has corresponding local pig script ro run them without "mapreduce" mode.
+   For example: Pig script for running challenge 1 source in local mode is "lumoid1_local.pig".
+   It uses input files from local system and prints output to console.
+2. Please use following commands if running in "local" mode:
+   i. For Challenge 1:
+       $ pig -x local -param_file param1.txt -f lumoid1_local.pig
+   ii. For Challenge 2a:
+       $ pig -x local -param_file param2.txt -f lumoid2a_local.pig   
+   iii. For Challenge 2b:
+       $ pig -x local -param_file param2.txt -f lumoid2b_local.pig   
+   iv. For Challenge 3a:
+       $ pig -x local -param_file param3.txt -f lumoid3a_local.pig  
+   v. For Challenge 3b:
+       $ pig -x local -param_file param3.txt -f lumoid3b_local.pig  
+
+----------------
+If NOT using cloudera quickstart VM, you can use following steps to run pig scripts in "local" mode on linux distribution:
+----------------
+This appoach is not tested.
+Please use instructions present in below link regarding how to install pig on ubuntu.
+http://hadooptutorial.info/pig-installation-on-ubuntu/
+
+Once installed you can use steps to run pig scripts in "local" mode as described above.
+
+
+
+

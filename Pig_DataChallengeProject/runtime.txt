@@ -1,0 +1,21 @@
+Task 1 local runtime:
+HadoopVersion	PigVersion	UserId		StartedAt		FinishedAt		Features
+2.5.0-cdh5.3.0	0.12.0-cdh5.3.0	cloudera	2016-08-17 12:08:32	2016-08-17 12:08:46	HASH_JOIN,GROUP_BY,ORDER_BY,FILTER,LIMIT
+
+Task 2a local runtime:
+HadoopVersion	PigVersion	UserId		StartedAt		FinishedAt		Features
+2.5.0-cdh5.3.0	0.12.0-cdh5.3.0	cloudera	2016-08-17 12:22:17	2016-08-17 12:22:21	GROUP_BY,FILTER
+
+Task 2b local runtime:
+HadoopVersion	PigVersion	UserId		StartedAt		FinishedAt		Features
+2.5.0-cdh5.3.0	0.12.0-cdh5.3.0	cloudera	2016-08-17 12:20:27	2016-08-17 12:20:41	HASH_JOIN,GROUP_BY,ORDER_BY,RANK,FILTER
+
+Task 3a local runtime:
+HadoopVersion	PigVersion	UserId		StartedAt		FinishedAt		Features
+2.5.0-cdh5.3.0	0.12.0-cdh5.3.0	cloudera	2016-08-17 12:24:12	2016-08-17 12:24:22	GROUP_BY,ORDER_BY,FILTER,LIMIT
+
+Task 3b local runtime:
+HadoopVersion	PigVersion	UserId	  	StartedAt		FinishedAt		Features
+2.5.0-cdh5.3.0	0.12.0-cdh5.3.0	cloudera	2016-08-17 11:57:16	2016-08-17 11:57:32	HASH_JOIN,GROUP_BY,ORDER_BY,FILTER,LIMIT
+
+

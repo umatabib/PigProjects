@@ -1,0 +1,4 @@
+GENDER_IN = female
+STATE_IN_1 = OK
+STATE_IN_2 = NY
+STATE_IN_3 = OH

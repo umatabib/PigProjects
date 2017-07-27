@@ -1,0 +1,2 @@
+CHANNEL_IN = twitter
+STATE_IN = OK
